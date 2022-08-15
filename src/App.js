@@ -61,6 +61,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<RootDashboard />} />
+          <Route path="/jc-exp-manager" element={<RootDashboard />} />
           <Route path="ClientOptions" element={<ClientOptions />} />
         </Routes>
       </ClientListv3.Provider>
