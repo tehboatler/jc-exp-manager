@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tehboatler.github.com/justcutsmanager/static/css/main.28db76fa.css",
+    "main.js": "/tehboatler.github.com/justcutsmanager/static/js/main.bab53717.js",
+    "static/js/787.5260b8d6.chunk.js": "/tehboatler.github.com/justcutsmanager/static/js/787.5260b8d6.chunk.js",
+    "index.html": "/tehboatler.github.com/justcutsmanager/index.html",
+    "main.28db76fa.css.map": "/tehboatler.github.com/justcutsmanager/static/css/main.28db76fa.css.map",
+    "main.bab53717.js.map": "/tehboatler.github.com/justcutsmanager/static/js/main.bab53717.js.map",
+    "787.5260b8d6.chunk.js.map": "/tehboatler.github.com/justcutsmanager/static/js/787.5260b8d6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28db76fa.css",
+    "static/js/main.bab53717.js"
+  ]
+}
