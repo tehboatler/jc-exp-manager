@@ -8,6 +8,12 @@ import StylistQueues from "./Views/StylistQueues/StylistQueues"
 import ClientOptions from "./Views/ClientOptions/ClientOptions"
 
 const stylistsv2 = [
+  // {
+  //   stylistName: "Stylist#1",
+  //   totalWaitTimeLB: 0,
+  //   totalWaitTimeUB: 0,
+  //   index: 0,
+  // },
   {
     stylistName: "ISA",
     totalWaitTimeLB: 0,
@@ -35,6 +41,7 @@ function App() {
   const [stylists, setStylists] = useState(stylistsv2)
   const [clientOptionsVisible, setClientOptionsVisible] = useState(false)
   const [currentClientIDToEdit, setCurrentClientIDToEdit] = useState(null)
+  const [stylistMenuToggle, setStylistMenuToggle] = useState(false)
   console.log("ClientList: ", clientList)
   return (
     <div className="App">
@@ -48,6 +55,8 @@ function App() {
           setClientOptionsVisible,
           currentClientIDToEdit,
           setCurrentClientIDToEdit,
+          stylistMenuToggle,
+          setStylistMenuToggle,
         }}
       >
         <Routes>

@@ -3,16 +3,19 @@ import { useEffect } from "react"
 import StylistQueueItem from "../../Components/atoms/StylistQueueItem"
 import StylistQueueBlock from "../../Components/molecules/StylistQueueBlock"
 import { ClientListv3 } from "../../Context/ClientListv3"
+import "./styles.css"
 
 export default function StylistQueues() {
   const [columns, setColumns] = React.useState([])
-  const { clientList, stylists, setStylists } = useContext(ClientListv3)
+  const { clientList, stylists, setStylists, setStylistMenuToggle } =
+    useContext(ClientListv3)
   const styles = {
     root: {
       width: "100%",
-      height: "100%",
+      height: "100vh",
       //   paddingLeft: "0.5vw",
       // backgroundColor: "red",
+      // overflowY: "scroll",
     },
     header: {
       display: "flex",
@@ -21,31 +24,50 @@ export default function StylistQueues() {
       backgroundColor: "#0C0A1C",
       flexDirection: "row",
       boxShadow: "0px 0px 15px #000",
+      userSelect: "none",
     },
     timeButton: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "2vw",
+      aspectRatio: "1/1",
       marginHorizontal: "1vw",
+      backgroundColor: "#15132C",
+      borderRadius: "0.5vw",
+      borderStyle: "solid",
+      borderColor: "#352E6D",
+      color: "#D2CDFF",
+      userSelect: "none",
     },
     stylistHeader: {
       display: "flex",
+      userSelect: "none",
 
       width: "20vw",
       height: "5vh",
       justifyContent: "space-around",
       alignItems: "center",
-      fontSize: "0.9rem",
+      fontSize: "2.5vh",
       color: "#D2CDFF",
       fontWeight: "bold",
-      lineHeight: "5vh",
+      lineHeight: "2.5vh",
       boxShadow: "0px 0px 5px #000",
+      userSelect: "none",
     },
     stylistQueue: {
       display: "flex",
       flexDirection: "row",
       alignItems: "flex-start",
+      height: "auto",
       width: `${20 * stylists.length}vw`,
       //   backgroundColor: "#0C0A1C",
       marginTop: "1vh",
       flexWrap: "wrap",
+      userSelect: "none",
+      paddingBottom: "5vh",
+      // overflowY: "scroll",
+      // backgroundColor: "red",
     },
     stylistQueueItem: {
       display: "flex",
@@ -91,6 +113,8 @@ export default function StylistQueues() {
         arrivalTime: client.arrivalTime,
         remainingLB: lowLB.totalWaitTimeLB,
         remainingUB: lowLB.totalWaitTimeUB,
+        promisedUB: client.promisedUB,
+        promisedLB: client.promisedLB,
         index: index,
       }
 
@@ -116,11 +140,11 @@ export default function StylistQueues() {
     setStylists(newStylistState)
   }
   return (
-    <div style={styles.root}>
+    <div className="stylistQueueWrapper">
       <div style={styles.header}>
         {stylists.map((stylist, index) => {
           return (
-            <div style={styles.stylistHeader} key={index}>
+            <div style={styles.stylistHeader} key={index} onClick={() => {}}>
               {stylist.stylistName}
             </div>
           )

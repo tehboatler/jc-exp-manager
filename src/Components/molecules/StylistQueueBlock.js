@@ -35,6 +35,8 @@ export default function StylistQueueBlock({ data }) {
             remLB={client.remainingLB}
             remUB={client.remainingUB}
             index={client.index}
+            promisedLB={client.promisedLB}
+            promisedUB={client.promisedUB}
           />
         </div>
       ))}

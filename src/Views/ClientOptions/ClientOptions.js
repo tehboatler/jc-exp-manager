@@ -177,6 +177,8 @@ export default function ClientOptions() {
       lowerBound: clientToEdit[0]?.lowerBound ?? "",
       upperBound: clientToEdit[0]?.upperBound ?? "",
       arrivalTime: clientToEdit[0]?.arrivalTime ?? "",
+      promisedLB: clientToEdit[0]?.promisedLB ?? "",
+      promisedUB: clientToEdit[0]?.promisedUB ?? "",
     },
     enableReinitialize: true,
     onSubmit: (values) => {
@@ -270,6 +272,7 @@ export default function ClientOptions() {
             <div style={styles.propertyAndField}>
               <div style={styles.property}>Name: </div>
               <input
+                autoFocus={true}
                 style={styles.textField}
                 id="name"
                 name="name"
@@ -319,7 +322,7 @@ export default function ClientOptions() {
                 name="promisedUB"
                 type="number"
                 onChange={formik.handleChange}
-                value={formik.values.arrivalTime}
+                value={formik.values.promisedUB}
               />
             </div>
             <div style={styles.propertyAndField}>
@@ -330,7 +333,7 @@ export default function ClientOptions() {
                 name="promisedLB"
                 type="number"
                 onChange={formik.handleChange}
-                value={formik.values.arrivalTime}
+                value={formik.values.promisedLB}
               />
             </div>
           </div>
@@ -345,6 +348,8 @@ export default function ClientOptions() {
                       lowerbound: "",
                       upperbound: "",
                       arrivalTime: "",
+                      promisedUB: "",
+                      promisedLB: "",
                     },
                   })
               }}
